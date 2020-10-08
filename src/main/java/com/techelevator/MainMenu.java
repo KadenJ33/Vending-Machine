@@ -1,5 +1,7 @@
 package com.techelevator;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.math.BigDecimal;
 import java.util.Scanner;
 
@@ -18,7 +20,7 @@ public class MainMenu {
 		String userInput = ourScanner.nextLine();
 		
 		if (userInput.equals("1")) {
-			System.out.println("1");
+			displayItems();
 			
 			
 		} else if (userInput.equals("2")){
@@ -105,6 +107,23 @@ public class MainMenu {
 		
 		return balance;
 	}
-	
+	public void displayItems() {
+		int numRemaining = 5;
+		File inputFile = new File("vendingmachine.csv");
+		try (Scanner itemFile = new Scanner(inputFile)){
+			while (itemFile.hasNextLine()) {
+				String fileLine = itemFile.nextLine();
+				System.out.println(fileLine + " - Only " + numRemaining + " remaining! ");
+				if(!itemFile.hasNextLine()) {
+					System.out.println("Enter X to go back.");
+					String userInput = ourScanner.nextLine();
+					displayMenu();
+				}
+		}
+			} catch(FileNotFoundException fnfe) {
+				System.out.println("Error!");
+			}
+
+	}
 	
 }
