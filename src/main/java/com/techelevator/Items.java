@@ -13,13 +13,10 @@ public class Items {
 	
 	
 	//constructor
-	public itemsRemaining() {
+	public void itemsRemaining() {
 		
 		
 	}
-	
-	
-	
 	
 	//methods
 	public void displayItems() {
