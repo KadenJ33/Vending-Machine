@@ -20,6 +20,8 @@ public class Items {
 	
 	//methods
 	public void displayItems() {
+		
+		
 		File inputFile = new File("vendingmachine.csv");
 		try (Scanner itemFile = new Scanner(inputFile)){
 			while (itemFile.hasNextLine()) {
