@@ -16,10 +16,13 @@ public class FinishTransaction{
 	int numDime;
 	int numQuarter;
 	//change += currentChange.getChange();
+	
+	
+	pullFromMain.logAction("GIVE CHANGE", change, pullFromMain.getBalance());
 	if(change == 0) {
 		System.out.println("You don't get any change.");
 		System.out.println("Transaction Complete!");
-		pullFromMain.logAction("GIVE CHANGE", change,pullFromMain.getBalance());
+		//pullFromMain.logAction("GIVE CHANGE", change,pullFromMain.getBalance());
 	} else {
 	while(change != 0 || change == pullFromMain.getBalance()) {
 		 
@@ -42,7 +45,7 @@ public class FinishTransaction{
 		
 		}
 		System.out.println("Transaction Complete!");
-		pullFromMain.logAction("GIVE CHANGE", change, pullFromMain.getBalance());
+		
 	}
 	}
 	
