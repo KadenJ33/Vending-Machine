@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 public class MainMenu {
 	private String itemChoice;
-	
+	double balance = 0.0;
 	public String getItemChoice() {
 		return itemChoice;
 	}
@@ -90,6 +90,10 @@ public class MainMenu {
 			
 			
 		} else if (userInput.equals("3")) {
+			System.out.println("Please wait while we process your transaction...");
+			
+			FinishTransaction ft = new FinishTransaction();
+			ft.getChangeReturned();
 
 				
 			
@@ -161,7 +165,9 @@ public class MainMenu {
 			System.out.println("Error!");
 		} 
 	}
-	
+	public double getBalance() {
+		return balance;
+	}
 
 	
 	
