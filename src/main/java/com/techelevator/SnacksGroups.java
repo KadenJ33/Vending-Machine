@@ -32,7 +32,14 @@ public class SnacksGroups {
 	
 	
 	//constructor
-	
+	public SnacksGroups (String slot, String name, Double price, String snackGrouping) {
+		this.slot = slot;
+		this.name = name;
+		this.price = price;
+		this.snackGrouping = snackGrouping;
+		stockLeft = 5;
+		
+	}
 	
 	
 }
