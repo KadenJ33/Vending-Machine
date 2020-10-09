@@ -18,9 +18,6 @@ public class Items {
 		
 	}
 	
-	
-	
-	
 	//methods
 	public void displayItems() {
 		
