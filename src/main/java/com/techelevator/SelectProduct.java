@@ -1,5 +1,7 @@
 package com.techelevator;
 
+import java.util.List;
+
 // get list items
 // find specific items
 // confirm if sold out or not, if it is return to purchase menu
@@ -22,19 +24,22 @@ public class SelectProduct {
 	MainMenu myMenu = new MainMenu();
 	Slot mySlot = new Slot(null, null, change, null);
 	SlotsArrayList data = new SlotsArrayList();
+	List<Slot> myList = data.itemFileToArrayList();
+	
 	
 	public void doesItemExist() {
 	//	MainMenu myMenu = new MainMenu();
 	//	SnacksGroups myGroups = new SnacksGroups();
 		// fior loop that iterates through arrayList, checks if getItemChoice exists in specific element
-		for (int i = 0; i < data.length -1; i++) {
-			if (arrayList[i].contains(myMenu.getItemChoice())) {
+		for (int i = 0; i < myList.size() -1; i++) {
+			if (myList.get(i).getSlot().equals(myMenu.getItemChoice().toUpperCase())) {
 				isItemSoldOut();
 			
 		} else {
 			System.out.println("Invalid Item Choice");
 			myMenu.displayPurchasingMenu();
 		}
+	}	
 	}
 	
 	public void isItemSoldOut() {

@@ -11,7 +11,6 @@ public class SlotsArrayList {
 	//instance variables
 	int numRemaining = 5;
 	
-	
 	//methods
 	public void displayItems() {
 		
