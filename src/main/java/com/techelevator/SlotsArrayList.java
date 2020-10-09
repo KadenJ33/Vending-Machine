@@ -40,7 +40,6 @@ public class SlotsArrayList {
 		List<Slot> vendingMachineList = new ArrayList<>();
 			
 		
-		
 		//try for error checking
 		try (Scanner itemFile = new Scanner(inputFile)){
 			//while loop that runs through the lines of the txt file

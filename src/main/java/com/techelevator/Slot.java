@@ -57,13 +57,13 @@ public class Slot {
 		this.price = price;
 		this.snackGrouping = snackGrouping;
 		stockLeft = 5;
-		if (this.snackGrouping == "Chip") {
+		if (this.snackGrouping.equals("Chip")) {
 			outputMessage = ("Crunch Crunch, Yum!");
-		} else if (this.snackGrouping == "Candy") {
+		} else if (this.snackGrouping.equals("Candy")) {
 			outputMessage = ("Munch Munch, Yum!");
-		} else if (this.snackGrouping == "Drink") {
+		} else if (this.snackGrouping.equals("Drink")) {
 			outputMessage = ("Glug Glug, Yum!");
-		} else if (this.snackGrouping == "Gum") {
+		} else if (this.snackGrouping.equals("Gum")) {
 			outputMessage = ("Chew Chew, Yum!");
 		}
 	}
