@@ -48,6 +48,10 @@ public class MainMenu {
 		} else if (userInput.equals("3")) {
 			System.out.println("Exiting");
 			System.exit(1);
+			
+		} else if (userInput.contentEquals("4")) {
+			
+			
 		} else {
 			System.out.println("Please enter one of the options.");
 			displayMenu();
@@ -87,7 +91,7 @@ public class MainMenu {
 			
 		} else if (userInput.equals("3")) {
 
-			
+				
 			
 		} else {
 			System.out.println("Please enter one of the options.");
