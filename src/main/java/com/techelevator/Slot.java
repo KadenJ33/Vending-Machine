@@ -17,7 +17,6 @@ public class Slot {
 		return slot;
 	}
 
-
 	public String getName() {
 		return name;
 	}
@@ -25,7 +24,6 @@ public class Slot {
 	public Double getPrice() {
 		return price;
 	}
-
 
 	public String getSnackGrouping() {
 		return snackGrouping;

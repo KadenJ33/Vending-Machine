@@ -30,11 +30,11 @@ public class MainMenu {
 		String userInput = ourScanner.nextLine();
 		
 		if (userInput.equals("1")) {
-			Items itemList = new Items();
-			String[] output = itemList.itemFileToArray();
-			for (int i = 0; i < output.length; i++) {
-				System.out.println(output[i]);
-			}
+			//SlotsArrayList itemList = new SlotsArrayList();
+			//String[] output = itemList.itemFileToArray();
+			//for (int i = 0; i < output.length; i++) {
+			//	System.out.println(output[i]);
+			//}
 		//	System.out.println(output);
 			getMainMenuChoice();
 			
@@ -42,7 +42,7 @@ public class MainMenu {
 		} else if (userInput.equals("2")){
 			displayPurchasingMenu();
 			getPurchasingMenuChoice();
-			
+			 
 			
 			System.out.println("2");
 		} else if (userInput.equals("3")) {
