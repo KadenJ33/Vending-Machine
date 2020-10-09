@@ -9,7 +9,9 @@ public class VendingMachine {
 
 
 
-		
+		//SlotsArrayList testArrayList = new SlotsArrayList();
+		//List<Slot> arrayListSlots = new ArrayList<Slot>();
+		////arrayListSlots = testArrayList.itemFileToArrayList();
 		
 		MainMenu vendingMachineMenu = new MainMenu();
 		

@@ -118,21 +118,21 @@ public class MainMenu {
 			String userInput = ourScanner.nextLine();
 
 		if (userInput.equals("1")) {
-			balance += 1;
+			this.balance += 1;
 			moneyAdded = 1.0;
-			System.out.println(balance);
+			System.out.println(this.balance);
 		} else if (userInput.equals("2")){			
-			balance += 2;
+			this.balance += 2;
 			moneyAdded = 2.0;
-			System.out.println(balance);
+			System.out.println(this.balance);
 		} else if (userInput.equals("5")) {
-			balance += 5;
+			this.balance += 5;
 			moneyAdded = 5.0;
-			System.out.println(balance);
+			System.out.println(this.balance);
 		} else if (userInput.equals("10")) {
-			balance += 10;
+			this.balance += 10;
 			moneyAdded = 10.0;
-			System.out.println(balance);
+			System.out.println(this.balance);
 
 		} else {
 			finishedInputtingMoney = true;
@@ -141,7 +141,7 @@ public class MainMenu {
 		logAction("FEED MONEY", moneyAdded, balance);
 		
 		}
-		return balance;
+		return this.balance;
 		
 	}
 	
