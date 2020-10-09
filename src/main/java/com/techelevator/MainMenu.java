@@ -2,7 +2,11 @@ package com.techelevator;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.Scanner;
 
 public class MainMenu {
@@ -90,10 +94,11 @@ public class MainMenu {
 		
 		return userInput;
 	}
-	
+	Double balance = 0.0;
+	Double moneyAdded = 0.0;
 	public Double inputMoney() {
 	
-		Double balance = 0.0;
+		
 		Boolean finishedInputtingMoney = false;
 
 		
@@ -103,26 +108,58 @@ public class MainMenu {
 
 		if (userInput.equals("1")) {
 			balance += 1;
+			moneyAdded +=1;
 			System.out.println(balance);
-			
+			logAction();
+			moneyAdded = 0.0;
 		} else if (userInput.equals("2")){			
 			balance += 2;
 			System.out.println(balance);
+			logAction();
 		} else if (userInput.equals("5")) {
 			balance += 5;
 			System.out.println(balance);
+			logAction();
 		} else if (userInput.equals("10")) {
 			balance += 10;
 			System.out.println(balance);
+			logAction();
 		} else {
 			finishedInputtingMoney = true;
-		}
 		} 
+		}
 		return balance;
 		
 	}
+	
+	
+	public void logAction() {
+		String newPath = System.getProperty("user.dir");
+		String fileName = "log.txt";
+		File log = new File(newPath, fileName);
+		try {
+			log.createNewFile();
+		} catch (IOException e) {
+			System.out.println("Error!");
+		}
+		
+		
+		try (PrintWriter pw = new PrintWriter(new FileWriter(log, true))) {
+			
+			pw.println(LocalDateTime.now() + " " + "FEED MONEY" + " " + moneyAdded + " " +  balance);
+			
+		}catch(IOException e) {
+			System.out.println("Error!");
+		} 
+	}
+	
 
-
+	
 	
 	
 }
+
+
+	
+	
+

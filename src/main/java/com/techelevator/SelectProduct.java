@@ -20,7 +20,9 @@ public class SelectProduct {
 	}
 
 	MainMenu myMenu = new MainMenu();
-	SnacksGroups myGroups = new SnacksGroups();
+	SnackGroups myGroups = new SnackGroups();
+
+	
 	public void doesItemExist() {
 	//	MainMenu myMenu = new MainMenu();
 	//	SnacksGroups myGroups = new SnacksGroups();
@@ -61,4 +63,7 @@ public class SelectProduct {
 		
 		myMenu.displayMenu();
 	}
+	
+	
+	
 }
