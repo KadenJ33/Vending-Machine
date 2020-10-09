@@ -20,35 +20,37 @@ public class SelectProduct {
 	}
 
 	MainMenu myMenu = new MainMenu();
-	SnackGroups myGroups = new SnackGroups();
-
+	Slot mySlot = new Slot(null, null, change, null);
+	SlotsArrayList data = new SlotsArrayList();
 	
 	public void doesItemExist() {
 	//	MainMenu myMenu = new MainMenu();
 	//	SnacksGroups myGroups = new SnacksGroups();
-		if (myMenu.getItemChoice().equals(myGroups.getSlot())) {
-			
-			isItemSoldOut();
+		// fior loop that iterates through arrayList, checks if getItemChoice exists in specific element
+		for (int i = 0; i < data.length -1; i++) {
+			if (arrayList[i].contains(myMenu.getItemChoice())) {
+				isItemSoldOut();
 			
 		} else {
+			System.out.println("Invalid Item Choice");
 			myMenu.displayPurchasingMenu();
 		}
 	}
 	
 	public void isItemSoldOut() {
-		if (myGroups.getStockLeft() > 0) {
-			
+		if (mySlot.getStockLeft() >	0) {
 			isEnoughMoney();
 			
 		} else {
+			System.out.println("Item is sold out");
 			myMenu.displayPurchasingMenu();
 		}
 	}
 	
 	public void isEnoughMoney() {
-		if (myMenu.inputMoney() >= myGroups.getPrice()) {
+		if (myMenu.inputMoney() >= mySlot.getPrice()) {
 			
-			change = myMenu.inputMoney() - myGroups.getPrice();
+			change = myMenu.inputMoney() - mySlot.getPrice();
 			printItemInfo();
 			
 		} else {
@@ -59,7 +61,7 @@ public class SelectProduct {
 	
 	public void printItemInfo() {
 		Double.toString(change);
-		System.out.println( myGroups.getName() + " " + myGroups.getPrice() + " " + change + "\n" + myGroups.getMessage);
+		System.out.println( mySlot.getName() + " " + mySlot.getPrice() + " " + change + "\n" + mySlot.getOutputMessage());
 		
 		myMenu.displayMenu();
 	}
