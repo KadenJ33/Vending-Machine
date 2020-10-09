@@ -22,6 +22,7 @@ public class SelectProduct {
 	}
 
 	MainMenu myMenu = new MainMenu();
+	String choice = myMenu.getItemChoice();
 	Slot mySlot = new Slot(null, null, change, null);
 	SlotsArrayList data = new SlotsArrayList();
 	List<Slot> myList = data.itemFileToArrayList();
@@ -32,7 +33,7 @@ public class SelectProduct {
 	//	SnacksGroups myGroups = new SnacksGroups();
 		// fior loop that iterates through arrayList, checks if getItemChoice exists in specific element
 		for (int i = 0; i < myList.size() -1; i++) {
-			if (myList.get(i).getSlot().equals(myMenu.getItemChoice().toUpperCase())) {
+			if (myList.get(i).getSlot().equals(choice.toUpperCase())) {
 				isItemSoldOut();
 			
 		} else {
