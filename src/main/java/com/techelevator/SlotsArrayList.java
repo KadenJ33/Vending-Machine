@@ -35,7 +35,7 @@ public class SlotsArrayList {
 		//gets the txt file ready
 		File inputFile = new File("vendingmachine.csv");
 		//creates a bucket variable to hold the values from splitter later
-		String[] readInValueHolder = new String[4];			
+				
 		//creates the arrayList that will hold all the slots
 		List<Slot> vendingMachineList = new ArrayList<>();
 			
@@ -45,13 +45,13 @@ public class SlotsArrayList {
 		try (Scanner itemFile = new Scanner(inputFile)){
 			//while loop that runs through the lines of the txt file
 			while (itemFile.hasNextLine()) {
-				
+
 			//splits the current line from the txt file and stores the seperate values in an array
-				readInValueHolder = itemFile.nextLine().split("|");
+				 String[] readInValueHolder = itemFile.nextLine().split("\\|");
 				//creates a new slot and passes in the values from the split array into the constructor then adds it to the list
 				Slot vendingMachineSlot = new Slot(readInValueHolder[0],readInValueHolder[1],Double.parseDouble(readInValueHolder[2]),readInValueHolder[3]);
 				vendingMachineList.add(vendingMachineSlot);
-
+				
 				
 				}
 			//error catching
