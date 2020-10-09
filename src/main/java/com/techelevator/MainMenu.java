@@ -94,10 +94,10 @@ public class MainMenu {
 		
 		return userInput;
 	}
-	Double balance = 0.0;
-	Double moneyAdded = 0.0;
+
 	public Double inputMoney() {
-	
+		Double balance = 0.0;
+		Double moneyAdded = 0.0;
 		
 		Boolean finishedInputtingMoney = false;
 
@@ -108,32 +108,34 @@ public class MainMenu {
 
 		if (userInput.equals("1")) {
 			balance += 1;
-			moneyAdded +=1;
+			moneyAdded = 1.0;
 			System.out.println(balance);
-			logAction();
-			moneyAdded = 0.0;
 		} else if (userInput.equals("2")){			
 			balance += 2;
+			moneyAdded = 2.0;
 			System.out.println(balance);
-			logAction();
 		} else if (userInput.equals("5")) {
 			balance += 5;
+			moneyAdded = 5.0;
 			System.out.println(balance);
-			logAction();
 		} else if (userInput.equals("10")) {
 			balance += 10;
+			moneyAdded = 10.0;
 			System.out.println(balance);
-			logAction();
+
 		} else {
 			finishedInputtingMoney = true;
 		} 
+		
+		logAction("FEED MONEY", moneyAdded, balance);
+		
 		}
 		return balance;
 		
 	}
 	
 	
-	public void logAction() {
+	public void logAction(String action, double moneyAdded, double balance) {
 		String newPath = System.getProperty("user.dir");
 		String fileName = "log.txt";
 		File log = new File(newPath, fileName);
@@ -146,7 +148,7 @@ public class MainMenu {
 		
 		try (PrintWriter pw = new PrintWriter(new FileWriter(log, true))) {
 			
-			pw.println(LocalDateTime.now() + " " + "FEED MONEY" + " " + moneyAdded + " " +  balance);
+			pw.println(LocalDateTime.now() + " " + action + " " + moneyAdded + " " +  balance);
 			
 		}catch(IOException e) {
 			System.out.println("Error!");

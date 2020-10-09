@@ -38,66 +38,39 @@ public class Items {
 	public String[] itemFileToArray() {
 		
 		//declare arrays to hold split values
-		String[] readInValueHolder = new String[4];
-		Slot A1 = new Slot("","",0.0,"");
-		Slot A2 = new Slot("","",0.0,"");
-		Slot A3 = new Slot("","",0.0,"");
-		Slot A4 = new Slot("","",0.0,"");
-		Slot B1 = new Slot("","",0.0,"");
-		Slot B2 = new Slot("","",0.0,"");
-		Slot B3 = new Slot("","",0.0,"");
-		Slot B4 = new Slot("","",0.0,"");
-		Slot C1 = new Slot("","",0.0,"");
-		Slot C2 = new Slot("","",0.0,"");
-		Slot C3 = new Slot("","",0.0,"");
-		Slot C4 = new Slot("","",0.0,"");
-		Slot D1 = new Slot("","",0.0,"");
-		Slot D2 = new Slot("","",0.0,"");
-		Slot D3 = new Slot("","",0.0,"");
-		Slot D4 = new Slot("","",0.0,"");
-		
-		Slot[] itemsList = new Slot[]{A1, A2, A3, A4, B1, B2, B3, B4, C1, C2, C3, C4, D1, D2, D3, D4};
-		
-		
-		
-		
-		
-		// String[] slot = new String[16];
-		// String[] name = new String[16];
-		// String[] price = new String[16];
-		// String[] snackGrouping = new String[16];
-		
-		 
-		 
-		//String[] output = new String[16];
 		File inputFile = new File("vendingmachine.csv");
+		String[] readInValueHolder = new String[4];
 		
 		
+		//this reads the file to get the number of lines, this needs to be done before the array can be created
+		int lengthOfArray = 0;
+		try (Scanner itemFile = new Scanner(inputFile)){
+			while (itemFile.hasNextLine()) {
+				lengthOfArray += 1;
+			}
+		} catch(FileNotFoundException fnfe) {
+			System.out.println("Error!");
+}
+				
+				
+		Slot[] itemsList = new Slot[lengthOfArray];
 		
+
 		
 		int i = 0;
 		try (Scanner itemFile = new Scanner(inputFile)){
 			while (itemFile.hasNextLine()) {
-
 				
-				
+			
 				readInValueHolder = itemFile.nextLine().split("|");
+				Slot vendingMachineSlot = new Slot(readInValueHolder[0],readInValueHolder[1],Double.parseDouble(readInValueHolder[2]),readInValueHolder[3]);
+	
 				
-				itemsList[i] = itemsList[i].setSlot(readInValueHolder[0]);
-				//make an instance of snackGroups
-		//		Slot potatoCrisps = new Slot(readInValueHolder[0],readInValueHolder[1],Double.parseDouble(readInValueHolder[2]),readInValueHolder[3]);
-				
-				
-				
-				
-					//i++;
-					//output[i] = itemFile.nextLine();
-
 				
 				}
 			} catch(FileNotFoundException fnfe) {
 				System.out.println("Error!");
-	} return output;
+	} return readInValueHolder;
 }
 }
 	
