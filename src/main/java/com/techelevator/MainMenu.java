@@ -6,6 +6,12 @@ import java.math.BigDecimal;
 import java.util.Scanner;
 
 public class MainMenu {
+	private String itemChoice;
+	
+	public String getItemChoice() {
+		return itemChoice;
+	}
+
 	Scanner ourScanner = new Scanner(System.in);
 
 	public void displayMenu() {
@@ -70,7 +76,7 @@ public class MainMenu {
 			
 		} else if (userInput.equals("2")){
 			System.out.println("Please enter your selection: ");
-			String itemChoice = ourScanner.nextLine();
+			itemChoice = ourScanner.nextLine();
 			
 		} else if (userInput.equals("3")) {
 
@@ -115,5 +121,8 @@ public class MainMenu {
 		return balance;
 		
 	}
+
+
+	
 	
 }
