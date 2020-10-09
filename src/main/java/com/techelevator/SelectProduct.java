@@ -29,21 +29,19 @@ public class SelectProduct {
 	
 	
 	public void doesItemExist(String choice) {
-	//	MainMenu myMenu = new MainMenu();
-	//	SnacksGroups myGroups = new SnacksGroups();
-		// fior loop that iterates through arrayList, checks if getItemChoice exists in specific element
-		for (int i = 0; i < myList.size() -1; i++) {
-			if (myList.get(i).getSlot().equals(choice.toUpperCase())) {
-				isItemSoldOut();
-			
+		for (int i = 0; i < myList.size(); i++) {
+			if (myList.get(i).getSlot().equals(choice)) {
+				isItemSoldOut(choice);
+	
 		} else {
-			System.out.println("Invalid Item Choice");
+			System.out.println("Invalid Item Choice");	
 			myMenu.displayPurchasingMenu();
+			
 		}
-	}	
+	}
 	}
 	
-	public void isItemSoldOut() {
+	public void isItemSoldOut(String choice) {
 		if (mySlot.getStockLeft() >	0) {
 			isEnoughMoney();
 			
