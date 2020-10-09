@@ -80,7 +80,10 @@ public class MainMenu {
 			
 		} else if (userInput.equals("2")){
 			System.out.println("Please enter your selection: ");
+			SelectProduct snackTime = new SelectProduct();
 			itemChoice = ourScanner.nextLine();
+			snackTime.doesItemExist(itemChoice);
+			
 			
 		} else if (userInput.equals("3")) {
 

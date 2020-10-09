@@ -22,13 +22,13 @@ public class SelectProduct {
 	}
 
 	MainMenu myMenu = new MainMenu();
-	String choice = myMenu.getItemChoice();
+//	String choice = myMenu.getItemChoice();
 	Slot mySlot = new Slot(null, null, change, null);
 	SlotsArrayList data = new SlotsArrayList();
 	List<Slot> myList = data.itemFileToArrayList();
 	
 	
-	public void doesItemExist() {
+	public void doesItemExist(String choice) {
 	//	MainMenu myMenu = new MainMenu();
 	//	SnacksGroups myGroups = new SnacksGroups();
 		// fior loop that iterates through arrayList, checks if getItemChoice exists in specific element
