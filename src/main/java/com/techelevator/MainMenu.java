@@ -117,19 +117,19 @@ public class MainMenu {
 			System.out.println("Please enter a valid dollar amount.  Enter X to finish");
 			String userInput = ourScanner.nextLine();
 
-		if (userInput.equals("1")) {
+		if (userInput.equals("1") || userInput.equals("1.0") || userInput.equals("1.00")) {
 			balance += 1;
 			moneyAdded = 1.0;
 			System.out.println(balance);
-		} else if (userInput.equals("2")){			
+		} else if (userInput.equals("2") || userInput.equals("2.0") || userInput.equals("2.00")){			
 			balance += 2;
 			moneyAdded = 2.0;
 			System.out.println(balance);
-		} else if (userInput.equals("5")) {
+		} else if (userInput.equals("5") || userInput.equals("5.0") || userInput.equals("5.00")) {
 			balance += 5;
 			moneyAdded = 5.0;
 			System.out.println(balance);
-		} else if (userInput.equals("10")) {
+		} else if (userInput.equals("10") || userInput.equals("10.0") || userInput.contentEquals("10.00")) {
 			balance += 10;
 			moneyAdded = 10.0;
 			System.out.println(balance);
