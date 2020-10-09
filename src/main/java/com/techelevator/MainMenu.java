@@ -21,8 +21,12 @@ public class MainMenu {
 		
 		if (userInput.equals("1")) {
 			Items itemList = new Items();
-			itemList.displayItems();
-			
+			String[] output = itemList.itemFileToArray();
+			for (int i = 0; i < output.length; i++) {
+				System.out.println(output[i]);
+			}
+		//	System.out.println(output);
+			getMainMenuChoice();
 			
 			
 		} else if (userInput.equals("2")){
@@ -61,10 +65,12 @@ public class MainMenu {
 		
 		if (userInput.equals("1")) {
 			inputMoney();
-			
+			displayPurchasingMenu();
+			getPurchasingMenuChoice();
 			
 		} else if (userInput.equals("2")){
-			
+			System.out.println("Please enter your selection: ");
+			String itemChoice = ourScanner.nextLine();
 			
 		} else if (userInput.equals("3")) {
 
@@ -106,32 +112,8 @@ public class MainMenu {
 			finishedInputtingMoney = true;
 		}
 		} 
-		
 		return balance;
+		
 	}
-	
-//	public void showItemList() {
-//		Items itemList = new Items();
-//		itemList.displayItems();
-//		
-//	}
-//	public void displayItems() {
-//		int numRemaining = 5;
-//		File inputFile = new File("vendingmachine.csv");
-//		try (Scanner itemFile = new Scanner(inputFile)){
-//			while (itemFile.hasNextLine()) {
-//				String fileLine = itemFile.nextLine();
-//				System.out.println(fileLine + " - Only " + numRemaining + " remaining! ");
-//				if(!itemFile.hasNextLine()) {
-//					System.out.println("Enter X to go back.");
-//					String userInput = ourScanner.nextLine();
-//					displayMenu();
-//				}
-//		}
-//			} catch(FileNotFoundException fnfe) {
-//				System.out.println("Error!");
-//			}
-
-//	}
 	
 }
