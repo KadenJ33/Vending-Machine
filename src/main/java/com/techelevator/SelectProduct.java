@@ -11,11 +11,10 @@ public class SelectProduct {
 	
 
 	MainMenu myMenu = new MainMenu();
-	SlotsArrayList data = new SlotsArrayList();
-	List<Slot> myList = data.itemFileToArrayList();
+
 	
 	
-	public void doesItemExist(String choice) {
+	public void doesItemExist(String choice, List<Slot> myList) {
 		
 	//	boolean exists = true;
 		
