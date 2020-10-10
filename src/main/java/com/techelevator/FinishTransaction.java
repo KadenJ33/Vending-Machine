@@ -1,45 +1,54 @@
 package com.techelevator;
 
-public class FinishTransaction{
+public class FinishTransaction extends SelectProduct{
 	
 	SelectProduct currentChange = new SelectProduct();
 	MainMenu pullFromMain = new MainMenu();
 	
-	double change = currentChange.getChange();
-	
+	double change = MainMenu.getBalance();
+	double newBalance = MainMenu.getBalance();
 	
 	public void getChangeReturned() {
 	double nickel = .05;
 	double dime = .10;
 	double quarter = .25;
-	int numNickel;
-	int numDime;
-	int numQuarter;
+	double numNickel;
+	double numDime;
+	double numQuarter;
 	//change += currentChange.getChange();
 	
 	
-	pullFromMain.logAction("GIVE CHANGE", change, pullFromMain.getBalance());
+	pullFromMain.logAction("GIVE CHANGE", change, newBalance);
 	if(change == 0) {
 		System.out.println("You don't get any change.");
 		System.out.println("Transaction Complete!");
 		//pullFromMain.logAction("GIVE CHANGE", change,pullFromMain.getBalance());
 	} else {
-	while(change != 0 || change == pullFromMain.getBalance()) {
+	while(change != 0 || change == newBalance) {
 		 
 		if(change >= quarter) {
-	         numQuarter = (int)change / (int)quarter;
+	         numQuarter = change / quarter;
 	         change %= quarter;
+	         change = (int)change; 
 	         System.out.println("Change: " + numQuarter + " quarter(s)...");
+	         
+	         change = (double)change;
 	      
-	     } else if(change >= dime){
-	         numDime = (int)change / (int)dime;
+	     } if(change >= dime){
+	         numDime = change / dime;
 	         change %= dime;
+	         change = (int)change;
 	         System.out.println("Change: " + numDime + " dime(s)...");
-	      
-	     } else if(change >= nickel){
-	         numNickel = (int)change / (int)nickel;
-	         change %= nickel;
+	         
+	         change = (double)change;
+	         
+	     } if(change >= nickel){
+	         numNickel = change / nickel;
+	         change %= nickel; 
+	         change = (int)change;
 	         System.out.println("Change: " + numNickel + " nickel(s).");
+	        
+	         change = (double)change;
 	     }
 		
 		
