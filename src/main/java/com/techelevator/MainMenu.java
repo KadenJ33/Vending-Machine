@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 public class MainMenu {
 	private String itemChoice;
-	double balance = 0.0;
+	static double balance = 0.0;
 	public String getItemChoice() {
 		return itemChoice;
 	}
@@ -119,19 +119,19 @@ public class MainMenu {
 
 
 		if (userInput.equals("1") || userInput.equals("1.0") || userInput.equals("1.00")) {
-			balance += 1;
+			this.balance += 1;
 			moneyAdded = 1.0;
-			System.out.println(balance);
+			System.out.println(this.balance);
 		} else if (userInput.equals("2") || userInput.equals("2.0") || userInput.equals("2.00")){			
-			balance += 2;
+			this.balance += 2;
 			moneyAdded = 2.0;
-			System.out.println(balance);
+			System.out.println(this.balance);
 		} else if (userInput.equals("5") || userInput.equals("5.0") || userInput.equals("5.00")) {
-			balance += 5;
+			this.balance += 5;
 			moneyAdded = 5.0;
-			System.out.println(balance);
+			System.out.println(this.balance);
 		} else if (userInput.equals("10") || userInput.equals("10.0") || userInput.contentEquals("10.00")) {
-			balance += 10;
+			this.balance += 10;
 			moneyAdded = 10.0;
 			System.out.println(this.balance);
 
@@ -166,8 +166,12 @@ public class MainMenu {
 			System.out.println("Error!");
 		} 
 	}
-	public double getBalance() {
+	public static double getBalance() {
 		return balance;
+	}
+
+	public static void setBalance(double balance) {
+		MainMenu.balance = balance;
 	}
 
 	

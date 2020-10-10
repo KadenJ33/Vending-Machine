@@ -4,6 +4,8 @@ import java.util.List;
 
 public class SelectProduct {
 	
+	double newMoney = MainMenu.getBalance();
+	
 	double change;
 	
 	public double getChange() {
@@ -41,9 +43,10 @@ public class SelectProduct {
 	}
 	
 	public void isEnoughMoney(Slot mySlot) {
-		if (myMenu.getBalance() >= mySlot.getPrice()) {
+		if (newMoney >= mySlot.getPrice()) {
 			
-			change = myMenu.getBalance() - mySlot.getPrice();
+			newMoney = newMoney - mySlot.getPrice();
+			MainMenu.setBalance(newMoney);
 			printItemInfo(mySlot);
 			
 		} else {
@@ -55,7 +58,7 @@ public class SelectProduct {
 	
 	public void printItemInfo(Slot mySlot) {
 		Double.toString(change);
-		System.out.println( mySlot.getName() + " " + mySlot.getPrice() + " " + change + "\n" + mySlot.getOutputMessage());
+		System.out.println( mySlot.getName() + " " + mySlot.getPrice() + " " + newMoney + "\n" + mySlot.getOutputMessage());
 		
 		myMenu.displayMenu();
 		myMenu.getMainMenuChoice();
