@@ -120,19 +120,19 @@ public class MainMenu {
 
 		if (userInput.equals("1") || userInput.equals("1.0") || userInput.equals("1.00")) {
 			this.balance += 1;
-			moneyAdded = 1.0;
+			moneyAdded = 1.00;
 			System.out.println(this.balance);
 		} else if (userInput.equals("2") || userInput.equals("2.0") || userInput.equals("2.00")){			
 			this.balance += 2;
-			moneyAdded = 2.0;
+			moneyAdded = 2.00;
 			System.out.println(this.balance);
 		} else if (userInput.equals("5") || userInput.equals("5.0") || userInput.equals("5.00")) {
 			this.balance += 5;
-			moneyAdded = 5.0;
+			moneyAdded = 5.00;
 			System.out.println(this.balance);
 		} else if (userInput.equals("10") || userInput.equals("10.0") || userInput.contentEquals("10.00")) {
 			this.balance += 10;
-			moneyAdded = 10.0;
+			moneyAdded = 10.00;
 			System.out.println(this.balance);
 
 		} else {

@@ -5,7 +5,7 @@ import java.util.List;
 public class SelectProduct {
 	
 	double newMoney = MainMenu.getBalance();
-	
+	double change;
 	
 	
 	
@@ -17,7 +17,6 @@ public class SelectProduct {
 	
 	public void doesItemExist(String choice) {
 		
-	//	boolean exists = true;
 		
 		for (int i = 0; i < myList.size(); i++) {
 			if (myList.get(i).getSlot().equals(choice)) {
@@ -45,8 +44,8 @@ public class SelectProduct {
 	public void isEnoughMoney(Slot mySlot) {
 		if (newMoney >= mySlot.getPrice()) {
 			
-			newMoney = newMoney - mySlot.getPrice();
-			MainMenu.setBalance(newMoney);
+			change = newMoney - mySlot.getPrice();
+			MainMenu.setBalance(change);
 			printItemInfo(mySlot);
 			
 		} else {
@@ -61,13 +60,17 @@ public class SelectProduct {
 	public void printItemInfo(Slot mySlot) {
 
 	
-		System.out.println("\n" + mySlot.getName() + " " + mySlot.getPrice() + " " + newMoney + "\n" + mySlot.getOutputMessage() + "\n");
-
+		System.out.println("\n" + mySlot.getName() + " " + mySlot.getPrice() + " " + change + "\n" + mySlot.getOutputMessage() + "\n");
+		
+		
+		myMenu.logAction(mySlot.getName(), newMoney, change);
 
 		
 		myMenu.displayMenu();
 		myMenu.getMainMenuChoice();
 	}
+	
+	
 	
 	
 	
