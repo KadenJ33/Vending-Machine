@@ -6,11 +6,9 @@ public class SelectProduct {
 	
 	double newMoney = MainMenu.getBalance();
 	
-	double change;
 	
-	public double getChange() {
-		return change;
-	}
+	
+	
 
 	MainMenu myMenu = new MainMenu();
 	SlotsArrayList data = new SlotsArrayList();
@@ -57,7 +55,7 @@ public class SelectProduct {
 	}
 	
 	public void printItemInfo(Slot mySlot) {
-		Double.toString(change);
+		
 		System.out.println( mySlot.getName() + " " + mySlot.getPrice() + " " + newMoney + "\n" + mySlot.getOutputMessage());
 		
 		myMenu.displayMenu();
