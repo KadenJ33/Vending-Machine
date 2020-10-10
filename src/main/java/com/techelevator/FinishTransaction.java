@@ -1,6 +1,10 @@
 package com.techelevator;
 
+import java.text.DecimalFormat;
+
 public class FinishTransaction extends SelectProduct{
+	
+	
 	
 	SelectProduct currentChange = new SelectProduct();
 	MainMenu pullFromMain = new MainMenu();
@@ -8,14 +12,18 @@ public class FinishTransaction extends SelectProduct{
 	double change = MainMenu.getBalance();
 	double newBalance = MainMenu.getBalance();
 	
+	
+	
+	DecimalFormat df = new DecimalFormat("0.00");
 	public void getChangeReturned() {
 	double nickel = .05;
 	double dime = .10;
 	double quarter = .25;
-	double numNickel;
-	double numDime;
-	double numQuarter;
+	int numNickel = 0;
+	int numDime = 0;
+	int numQuarter = 0;
 	//change += currentChange.getChange();
+	
 	
 	
 	pullFromMain.logAction("GIVE CHANGE", change, newBalance);
@@ -26,24 +34,28 @@ public class FinishTransaction extends SelectProduct{
 	} else {
 	while(change != 0 || change == newBalance) {
 		 
-		if(change >= quarter) {
-	         numQuarter = change / quarter;
-	         change %= quarter;
-	         change = (int)change; 
-	         System.out.println("Change: " + numQuarter + " quarter(s)...");
-	         
-	         change = (double)change;
-	      
-	     } if(change >= dime){
-	         numDime = change / dime;
-	         change %= dime;
-	         change = (int)change;
+		while (change >= quarter) {
+			change -= quarter;
+			numQuarter += 1;
+	        change = Double.parseDouble(df.format(change));
+	     }
+		
+        System.out.println("Change: " + numQuarter + " quarter(s)...");
+		
+		
+		if(change >= dime){
+			while (change >= dime) {
+				change -= dime;
+				numDime += 1;
+		        change = Double.parseDouble(df.format(change));
+		     }
+	         //change = Double.parseDouble(df.format(change));
 	         System.out.println("Change: " + numDime + " dime(s)...");
 	         
-	         change = (double)change;
+	         //change = (double)change;
 	         
 	     } if(change >= nickel){
-	         numNickel = change / nickel;
+	         //numNickel = change / nickel;
 	         change %= nickel; 
 	         change = (int)change;
 	         System.out.println("Change: " + numNickel + " nickel(s).");
