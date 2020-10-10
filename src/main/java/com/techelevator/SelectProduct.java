@@ -18,25 +18,27 @@ public class SelectProduct {
 	
 	
 	public void doesItemExist(String choice) {
-		boolean exists = false;
+		
+	//	boolean exists = true;
+		
 		for (int i = 0; i < myList.size(); i++) {
-			if (myList.get(i).getSlot().equals(choice.toUpperCase())) {
+			if (myList.get(i).getSlot().equals(choice)) {
 				isItemSoldOut(myList.get(i));
-				exists = true;
-		} if (exists = false) {
-			System.out.println("Invalid Item Choice");	
-			myMenu.displayPurchasingMenu();
-			myMenu.getPurchasingMenuChoice();
+			}		
+		}  if ((myList.get(myList.size()-1).getSlot()) != choice) {
+			System.out.println("\n Invalid Item Choice \n");	
+			myMenu.displayMenu();
+			myMenu.getMainMenuChoice();
 		}
 	}
-	}
+	
 	
 	public void isItemSoldOut(Slot mySlot) {
 		if (mySlot.getStockLeft() >	0) {
 			isEnoughMoney(mySlot);
 			
 		} else {
-			System.out.println("Item is sold out");
+			System.out.println("\n Item is sold out \n");
 			myMenu.displayPurchasingMenu();
 			myMenu.getPurchasingMenuChoice();
 		}
@@ -50,15 +52,17 @@ public class SelectProduct {
 			printItemInfo(mySlot);
 			
 		} else {
-			System.out.print("You have not provided enough dollars to the snack robot \n");
+			System.out.print("\n You have not provided enough dollars to the snack robot \n");
 			myMenu.inputMoney();
-			isEnoughMoney(mySlot);
+			System.out.println("\n Please reselect your choice \n");
+			myMenu.displayPurchasingMenu();
+			myMenu.getPurchasingMenuChoice();
 		}
 	}
 	
 	public void printItemInfo(Slot mySlot) {
 		Double.toString(change);
-		System.out.println( mySlot.getName() + " " + mySlot.getPrice() + " " + newMoney + "\n" + mySlot.getOutputMessage());
+		System.out.println("\n" + mySlot.getName() + " " + mySlot.getPrice() + " " + newMoney + "\n" + mySlot.getOutputMessage() + "\n");
 		
 		myMenu.displayMenu();
 		myMenu.getMainMenuChoice();

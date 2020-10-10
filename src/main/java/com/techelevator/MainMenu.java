@@ -73,7 +73,7 @@ public class MainMenu {
 
 	
 	
-	public String getPurchasingMenuChoice() {
+	public void getPurchasingMenuChoice() {
 
 		String userInput = ourScanner.nextLine();
 		
@@ -102,8 +102,8 @@ public class MainMenu {
 			displayPurchasingMenu();
 			getPurchasingMenuChoice();
 		}	
-		
-		return userInput;
+	
+	//	return userInput;
 	}
 
 	public Double inputMoney() {
