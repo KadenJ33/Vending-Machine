@@ -20,7 +20,7 @@ public class SelectProduct {
 	public void doesItemExist(String choice) {
 		boolean exists = false;
 		for (int i = 0; i < myList.size(); i++) {
-			if (myList.get(i).getSlot().equals(choice)) {
+			if (myList.get(i).getSlot().equals(choice.toUpperCase())) {
 				isItemSoldOut(myList.get(i));
 				exists = true;
 		} if (exists = false) {

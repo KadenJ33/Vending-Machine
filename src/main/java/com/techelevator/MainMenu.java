@@ -133,7 +133,7 @@ public class MainMenu {
 		} else if (userInput.equals("10") || userInput.equals("10.0") || userInput.contentEquals("10.00")) {
 			this.balance += 10;
 			moneyAdded = 10.0;
-			System.out.println(this.balance);
+			System.out.println(this.balance);  
 
 		} else {
 			finishedInputtingMoney = true;
