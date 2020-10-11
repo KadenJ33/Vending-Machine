@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Scanner;
 
 public class MainMenu {
@@ -16,6 +17,10 @@ public class MainMenu {
 		return itemChoice;
 	}
 
+	
+	SlotsArrayList data = new SlotsArrayList();
+	List<Slot> myList = data.itemFileToArrayList();
+	
 	Scanner ourScanner = new Scanner(System.in);
 
 	public void displayMenu() {
@@ -30,12 +35,10 @@ public class MainMenu {
 		String userInput = ourScanner.nextLine();
 		
 		if (userInput.equals("1")) {
-			//SlotsArrayList itemList = new SlotsArrayList();
-			//String[] output = itemList.itemFileToArray();
-			//for (int i = 0; i < output.length; i++) {
-			//	System.out.println(output[i]);
-			//}
-		//	System.out.println(output);
+
+			
+			displayItems(myList);
+			
 			getMainMenuChoice();
 			
 			
@@ -86,7 +89,7 @@ public class MainMenu {
 			System.out.println("Please enter your selection: ");
 			SelectProduct snackTime = new SelectProduct();
 			itemChoice = ourScanner.nextLine();
-			snackTime.doesItemExist(itemChoice);
+			snackTime.doesItemExist(itemChoice, myList);
 			
 			
 		} else if (userInput.equals("3")) {
@@ -119,6 +122,7 @@ public class MainMenu {
 
 
 		if (userInput.equals("1") || userInput.equals("1.0") || userInput.equals("1.00")) {
+
 			this.balance += 1;
 			moneyAdded = 1.00;
 			System.out.println(this.balance);
@@ -134,6 +138,23 @@ public class MainMenu {
 			this.balance += 10;
 			moneyAdded = 10.00;
 			System.out.println(this.balance);
+
+			balance += 1;
+			moneyAdded = 1.0;
+			System.out.println(balance);
+		} else if (userInput.equals("2") || userInput.equals("2.0") || userInput.equals("2.00")){			
+			balance += 2;
+			moneyAdded = 2.0;
+			System.out.println(balance);
+		} else if (userInput.equals("5") || userInput.equals("5.0") || userInput.equals("5.00")) {
+			balance += 5;
+			moneyAdded = 5.0;
+			System.out.println(balance);
+		} else if (userInput.equals("10") || userInput.equals("10.0") || userInput.contentEquals("10.00")) {
+			balance += 10;
+			moneyAdded = 10.0;
+			System.out.println(balance);
+
 
 		} else {
 			finishedInputtingMoney = true;
@@ -175,8 +196,19 @@ public class MainMenu {
 	}
 
 	
+	public static void displayItems(List<Slot> listToBeDisplayed) {
+		
+		
+		for (int i = 0; i < listToBeDisplayed.size(); i++) {
+			if (listToBeDisplayed.get(i).getStockLeft() == 0) {
+				System.out.println(listToBeDisplayed.get(i).getSlot() + "|" + listToBeDisplayed.get(i).getName() + "| SOLD OUT");
+			} else {
+			System.out.println(listToBeDisplayed.get(i).getSlot() + "|" + listToBeDisplayed.get(i).getName() + "|" + listToBeDisplayed.get(i).getPrice() + "|" + listToBeDisplayed.get(i).getStockLeft() + " remaining");
+		}
+		}
+	}
 	
-	
+//ending bracket
 }
 
 

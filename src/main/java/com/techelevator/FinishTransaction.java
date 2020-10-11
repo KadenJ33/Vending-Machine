@@ -3,8 +3,7 @@ package com.techelevator;
 import java.text.DecimalFormat;
 
 public class FinishTransaction extends SelectProduct{
-	
-	
+		
 	
 	SelectProduct currentChange = new SelectProduct();
 	MainMenu pullFromMain = new MainMenu();
@@ -22,7 +21,6 @@ public class FinishTransaction extends SelectProduct{
 	int numNickel = 0;
 	int numDime = 0;
 	int numQuarter = 0;
-	//change += currentChange.getChange();
 	
 	
 	
@@ -49,15 +47,15 @@ public class FinishTransaction extends SelectProduct{
 				numDime += 1;
 		        change = Double.parseDouble(df.format(change));
 		     }
-	         //change = Double.parseDouble(df.format(change));
 	         System.out.println("Change: " + numDime + " dime(s)...");
 	         
-	         //change = (double)change;
 	         
 	     } if(change >= nickel){
-	         //numNickel = change / nickel;
-	         change %= nickel; 
-	         change = (int)change;
+				while (change >= nickel) {
+					change -= nickel;
+					numNickel += 1;
+			        change = Double.parseDouble(df.format(change));
+			     }
 	         System.out.println("Change: " + numNickel + " nickel(s).");
 	        
 	         change = (double)change;
