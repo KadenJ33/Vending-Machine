@@ -1,5 +1,6 @@
 package com.techelevator;
 
+import java.text.DecimalFormat;
 import java.util.List;
 
 public class SelectProduct {
@@ -42,9 +43,11 @@ public class SelectProduct {
 	}
 	
 	public void isEnoughMoney(Slot mySlot) {
+		DecimalFormat df = new DecimalFormat("0.00");
 		if (newMoney >= mySlot.getPrice()) {
 			
 			newMoney = newMoney - mySlot.getPrice();
+			newMoney = Double.parseDouble(df.format(newMoney));
 			MainMenu.setBalance(newMoney);
 			printItemInfo(mySlot);
 			
