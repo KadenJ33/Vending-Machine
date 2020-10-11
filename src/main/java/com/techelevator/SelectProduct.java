@@ -10,7 +10,7 @@ public class SelectProduct {
 	
 	
 	
-
+	
 	MainMenu myMenu = new MainMenu();
 
 	
@@ -44,10 +44,14 @@ public class SelectProduct {
 	
 	public void isEnoughMoney(Slot mySlot) {
 		DecimalFormat df = new DecimalFormat("0.00");
+		Double oldMoney = 0.0;
+		
 		if (newMoney >= mySlot.getPrice()) {
 			
+			oldMoney = newMoney;
 			newMoney = newMoney - mySlot.getPrice();
 			newMoney = Double.parseDouble(df.format(newMoney));
+			myMenu.logAction(mySlot.getSlot() +  "| " + mySlot.getName(), oldMoney, newMoney);
 			MainMenu.setBalance(newMoney);
 			printItemInfo(mySlot);
 			
@@ -58,6 +62,7 @@ public class SelectProduct {
 			myMenu.displayPurchasingMenu();
 			myMenu.getPurchasingMenuChoice();
 		}
+		
 	}
 	
 	public void printItemInfo(Slot mySlot) {

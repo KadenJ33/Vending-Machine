@@ -163,7 +163,7 @@ public class MainMenu {
 		
 		try (PrintWriter pw = new PrintWriter(new FileWriter(log, true))) {
 			
-			pw.println(LocalDateTime.now() + " " + action + " " + moneyAdded + " " +  balance);
+			pw.println(LocalDateTime.now() + " " + action + " " + "$" + moneyAdded + " " +  "$" + balance);
 			
 		}catch(IOException e) {
 			System.out.println("Error!");
