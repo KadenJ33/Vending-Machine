@@ -110,7 +110,7 @@ public class MainMenu {
 	}
 
 	public Double inputMoney() {
-		Double balance = 0.0;
+		
 		Double moneyAdded = 0.0;
 		
 		Boolean finishedInputtingMoney = false;
@@ -123,21 +123,6 @@ public class MainMenu {
 
 		if (userInput.equals("1") || userInput.equals("1.0") || userInput.equals("1.00")) {
 
-			this.balance += 1;
-			moneyAdded = 1.00;
-			System.out.println(this.balance);
-		} else if (userInput.equals("2") || userInput.equals("2.0") || userInput.equals("2.00")){			
-			this.balance += 2;
-			moneyAdded = 2.00;
-			System.out.println(this.balance);
-		} else if (userInput.equals("5") || userInput.equals("5.0") || userInput.equals("5.00")) {
-			this.balance += 5;
-			moneyAdded = 5.00;
-			System.out.println(this.balance);
-		} else if (userInput.equals("10") || userInput.equals("10.0") || userInput.contentEquals("10.00")) {
-			this.balance += 10;
-			moneyAdded = 10.00;
-			System.out.println(this.balance);
 
 			balance += 1;
 			moneyAdded = 1.0;
@@ -163,7 +148,7 @@ public class MainMenu {
 		logAction("FEED MONEY", moneyAdded, balance);
 		
 		}
-		return this.balance;
+		return balance;
 		
 	}
 	
@@ -181,7 +166,7 @@ public class MainMenu {
 		
 		try (PrintWriter pw = new PrintWriter(new FileWriter(log, true))) {
 			
-			pw.println(LocalDateTime.now() + " " + action + " " + moneyAdded + " " +  balance);
+			pw.println(LocalDateTime.now() + " " + action + " " + "$" + moneyAdded + " " +  "$" + balance);
 			
 		}catch(IOException e) {
 			System.out.println("Error!");
