@@ -110,7 +110,7 @@ public class MainMenu {
 	}
 
 	public Double inputMoney() {
-		//Double balance = 0.0;
+		
 		Double moneyAdded = 0.0;
 		
 		Boolean finishedInputtingMoney = false;
