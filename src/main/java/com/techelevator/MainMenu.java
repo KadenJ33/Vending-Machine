@@ -145,9 +145,10 @@ public class MainMenu {
 			finishedInputtingMoney = true;
 		} 
 		
-		logAction("FEED MONEY", moneyAdded, balance);
+		
 		
 		}
+		logAction("FEED MONEY", moneyAdded, balance);
 		return balance;
 		
 	}

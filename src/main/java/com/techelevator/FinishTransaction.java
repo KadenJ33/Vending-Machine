@@ -64,8 +64,9 @@ public class FinishTransaction extends SelectProduct{
 		
 		}
 		System.out.println("Transaction Complete!");
-		System.out.println("Exiting...");
-		System.exit(1);
+		System.out.println("\n");
+		pullFromMain.displayMenu();
+		pullFromMain.getMainMenuChoice();
 	}
 	//pullFromMain.logAction("GIVE CHANGE", change, MainMenu.getBalance());
 	}
