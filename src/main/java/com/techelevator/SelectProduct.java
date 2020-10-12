@@ -22,11 +22,12 @@ public class SelectProduct {
 			if (myList.get(i).getSlot().equals(choice)) {
 				isItemSoldOut(myList.get(i));
 			}		
-		}  if ((myList.get(myList.size()-1).getSlot()) != choice) {
+		}	if ((myList.get(myList.size()-1).getSlot()) != choice) {
 			System.out.println("\n Invalid Item Choice \n");	
 			myMenu.displayMenu();
 			myMenu.getMainMenuChoice();
-		}
+		   }
+		
 	}
 	
 	
@@ -75,11 +76,11 @@ public class SelectProduct {
 		System.out.println("\n" + mySlot.getName() + " " + mySlot.getPrice() + " " + change + "\n" + mySlot.getOutputMessage() + "\n");
 		
 		
-		myMenu.logAction(mySlot.getName(), newMoney, change);
+	
 
 		
-		myMenu.displayMenu();
-		myMenu.getMainMenuChoice();
+		myMenu.displayPurchasingMenu();
+		myMenu.getPurchasingMenuChoice();
 	}
 	
 	
