@@ -14,9 +14,14 @@ public class MainMenu {
 	private String itemChoice;
 	static double balance = 0.0;
 	public String getItemChoice() {
+
 		return itemChoice;
 	}
 
+	public List<Slot> getMyList() {
+
+		return myList;
+	}	
 	
 	SlotsArrayList data = new SlotsArrayList();
 	List<Slot> myList = data.itemFileToArrayList();
@@ -86,8 +91,10 @@ public class MainMenu {
 			getPurchasingMenuChoice();
 			
 		} else if (userInput.equals("2")){
+			
 			System.out.println("Please enter your selection: ");
 			SelectProduct snackTime = new SelectProduct();
+			displayItems(myList);
 			itemChoice = ourScanner.nextLine();
 			snackTime.doesItemExist(itemChoice, myList);
 			
@@ -97,7 +104,7 @@ public class MainMenu {
 			
 			FinishTransaction ft = new FinishTransaction();
 			ft.getChangeReturned();
-
+			
 				
 			
 		} else {
@@ -145,10 +152,9 @@ public class MainMenu {
 			finishedInputtingMoney = true;
 		} 
 		
-		
+		logAction("FEED MONEY", moneyAdded, balance);
 		
 		}
-		logAction("FEED MONEY", moneyAdded, balance);
 		return balance;
 		
 	}
