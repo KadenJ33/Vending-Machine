@@ -71,8 +71,8 @@ public class SelectProduct {
 	}
 	
 	public void printItemInfo(Slot mySlot) {
-
-	
+		DecimalFormat df = new DecimalFormat("0.00");
+		change = Double.parseDouble(df.format(change));
 		System.out.println("\n" + mySlot.getName() + " " + mySlot.getPrice() + " " + change + "\n" + mySlot.getOutputMessage() + "\n");
 		
 		
